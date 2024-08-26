@@ -5,109 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Антикварный магазин</title>
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            padding-top: 56px;
-            background-color: #fffbe5;
-        }
-
-        .content {
-            flex: 1;
-        }
-
-        .navbar {
-            background-color: #f1c40f; /* Золотистый цвет для навбара */
-        }
-        .navbar-brand, .navbar-nav .nav-link {
-            color: #2c3e50 !important; /* Темно-серый текст */
-        }
-        .navbar-nav .nav-link:hover {
-            color: #8e44ad !important; /* Светло-серый цвет при наведении */
-        }
-        .hero-section h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Темный теневой эффект */
-        }
-        .hero-section p {
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Тот же самый теневой эффект */
-        }
-        .btn-primary {
-            background-color: #f39c12; /* Золотисто-оранжевый */
-            border-color: #f39c12; /* Золотисто-оранжевый */
-        }
-        .btn-primary:hover {
-            background-color: #d35400; /* Темно-оранжевый при наведении */
-            border-color: #d35400; /* Темно-оранжевый при наведении */
-        }
-        .carousel-caption {
-            background: rgba(33, 33, 33, 0.7); /* Темный фон с прозрачностью для текста */
-            color: #f1e5d1; /* Светло-серый текст */
-        }
-
-        .carousel-description {
-            background: rgba(33, 33, 33, 0.7); /* Темный фон с прозрачностью для текста */
-            color: #f1e5d1; /* Светло-серый текст */
-            padding: 20px; /* Внутренние отступы для текста */
-            max-width: 800px; /* Максимальная ширина контейнера */
-            text-align: justify; /* Выравнивание текста по ширине */
-            border-radius: 8px; /* Закругления углов, если нужно */
-            margin: 10px auto 0; /* Центрирование описание */
-        }
-
-        .footer {
-            background-color: #2c3e50; /* Темно-серый фон */
-            color: #e1c029; /* Золотистый цвет текста */
-            padding: 20px 0;
-        }
-        .footer a {
-            color: #f1c40f; /* Золотистый цвет ссылок */
-        }
-        .footer p {
-            color: #f1e5d1; /* Золотистый цвет ссылок */
-        }
-        .footer a:hover {
-            color: #e67e22; /* Темно-оранжевый цвет при наведении */
-        }
-        .contact-info img {
-            width: 24px;
-            height: auto;
-        }
-        .contact-icon img {
-            transition: transform 0.2s;
-        }
-        .contact-icon:hover img {
-            transform: scale(1.1);
-        }
-
-        .contact-icon {
-            display: inline-flex;
-            align-items: center;
-            color: white; /* Цвет иконок */
-        }
-
-        .phone-number {
-            font-size: 16px; /* Размер шрифта */
-            font-weight: bold; /* Полужирный шрифт */
-            color: #f8f9fa; /* Цвет текста */
-            text-decoration: none; /* Удаление подчеркивания */
-            border: 1px solid #f8f9fa; /* Граница */
-            border-radius: 5px; /* Скругление углов */
-            padding: 5px 10px; /* Отступы */
-            background-color: rgba(0, 0, 0, 0.6); /* Фон */
-            display: inline-flex;
-            align-items: center;
-        }
-    </style>
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 
@@ -129,7 +27,7 @@
                     +7 (800) 555-35-35
                 </a>
             </div>
-            <button type="button" class="btn btn-outline-dark ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">Контакты</button>
+            <button type="button" class="btn btn-outline-warning ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">Контакты</button>
         </div>
     </div>
 </nav>
