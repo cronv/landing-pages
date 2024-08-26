@@ -1,138 +1,77 @@
-/* main.css */
-
-/* Darker and eye-friendly color palette */
-:root {
-    --primary-color: #2c3e50;  /* Dark blue-gray */
-    --secondary-color: #34495e; /* Slightly lighter dark blue-gray */
-    --dark-color: #1c2833;      /* Very dark blue-gray */
-    --light-color: #bdc3c7;     /* Light gray */
-}
-
-/* Navbar */
-.navbar {
-    background-color: var(--dark-color);
-}
-
-.navbar-brand, .nav-link {
-    color: var(--light-color) !important;
-}
-
-.nav-link.active {
-    color: var(--primary-color) !important;
-}
-
-/* Hero Section */
-.hero-section {
-    background-image: url('../image/hero-bg.jpeg');
+body {
+    /*background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('image/body.jpg');*/
+    background-color: #816a6a; // #988787
     background-size: cover;
     background-position: center;
-    height: 70vh;
-    color: var(--light-color);
+    background-repeat: inherit;
+    opacity: 0.9;
 }
 
+.navbar {
+    background-color: #4c3018; // #4a3a2c
+}
+.navbar-brand, .navbar-nav .nav-link {
+    color: #f5f5f5 !important;
+}
+.navbar-nav .nav-link:hover {
+    color: #d4a97c !important;
+}
 .hero-section h1 {
     font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-
-.hero-section .btn {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
-
-/* Featured Items */
-.card {
-    border: none;
-    transition: transform 0.3s ease-in-out;
+.btn-primary {
+    background-color: #d4a97c;
+    border-color: #d4a97c;
 }
-
-.card:hover {
-    transform: scale(1.05);
+.btn-primary:hover {
+    background-color: #b58969;
+    border-color: #b58969;
 }
-
-.card-title {
-    color: var(--dark-color);
+.carousel-item img {
+    object-fit: cover;
+    height: 400px;
 }
-
-.card-text {
-    color: var(--dark-color);
+.carousel-caption {
+    position: inherit;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #260b0bcc;
+    color: #eceeff;
+    padding: 5px;
+    text-align: center;
 }
-
-.btn-outline-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+.footer {
+    background-color: #4a3a2c;
+    color: #f5f5f5;
+    padding: 20px 50px;
+    text-align: left;
 }
-
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-}
-
-/* About Us Section */
-.about-us-section {
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-}
-
-.about-us-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.about-us-section p {
-    font-size: 1.1rem;
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark-color);
-}
-
-footer p, footer a {
+.footer p {
     margin: 0;
-    color: var(--light-color);
+}
+.footer a {
+    color: #d4a97c;
+}
+.footer a:hover {
+    color: #b58969;
+}
+.contact-info img {
+    width: 24px;
+    height: auto;
 }
 
-.img-fluid.logo-150 {
-	height: 150px;
+.contact-icon img {
+    transition: transform 0.2s;
 }
 
-.phone-exp-b {
-	background-color: rgba(0, 0, 0, 0.5);
-	padding: 5px;
-	border-radius: 5px;
+.contact-icon:hover img {
+    transform: scale(1.1);
 }
-
-/* main.css */
-
-/* Мобильные стили */
-@media (max-width: 576px) {
-    .navbar-nav {
-        text-align: center;
-    }
-
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-
-    .hero-section p.lead {
-        font-size: 1rem;
-    }
-
-    .phone-exp-b {
-        padding: 20px;
-    }
-
-    .about-us-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .about-us-section p {
-        font-size: 0.9rem;
-    }
-
-    .logo-150 {
-        max-width: 100px;
-    }
-}
-
