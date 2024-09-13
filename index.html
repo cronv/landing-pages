@@ -1,278 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <title>Антиквариат - Elyse</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Антикварный магазин</title>
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+
+    <link rel="icon" href="/image/icons/favicon.ico" type="image/x-icon">
+    <!-- iOS -->
+    <link rel="apple-touch-icon" sizes="120x120" href="/image/icons/apple-touch-icon-120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/image/icons/apple-touch-icon-152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/image/icons/apple-touch-icon-167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/icons/apple-touch-icon-180.png">
+
+    <!-- Android -->
+    <link rel="icon" sizes="192x192" href="/image/icons/android-icon-192.png">
+
+    <!-- Windows -->
+    <meta name="msapplication-TileImage" content="/image/icons/mstile-144x144.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js" defer></script>
 </head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Антикварные сокровища</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="me-auto"></div>
-            <div class="d-none d-lg-flex align-items-center">
-                <!-- Contact Icons -->
-                <a href="https://t.me/yourtelegram" class="text-decoration-none contact-icon me-3" target="_blank" aria-label="Telegram">
-                    <img src="image/contacts/tg.svg" alt="Telegram" height="32" width="32">
-                </a>
-                <a href="tel:+78005553535" class="text-decoration-none phone-number me-3" aria-label="Phone Number">
-                    +7 (800) 555-35-35
-                </a>
-            </div>
-            <button type="button" class="btn btn-outline-warning ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">Контакты</button>
-        </div>
+<body class="bg-image">
+<!-- Панель загрузки сайта -->
+<div id="loading">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Загрузка...</span>
     </div>
-</nav>
+</div>
 
-<!-- Main Content -->
-<div class="content">
-    <!-- Featured Items -->
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Рекомендуемые товары</h2>
-        <div id="carouselFeaturedItems" class="carousel slide">
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4564.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4564.jpg">
-                            <div class="carousel-description">Описание товара LS5A4564.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4583.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4583.jpg">
-                            <div class="carousel-description">Описание товара LS5A4583.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4596.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4596.jpg">
-                            <div class="carousel-description">Описание товара LS5A4596.jpg</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4600.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4600.jpg">
-                            <div class="carousel-description">Описание товара LS5A4600.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4603.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4603.jpg">
-                            <div class="carousel-description">Описание товара LS5A4603.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4624.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4624.jpg">
-                            <div class="carousel-description">Описание товара LS5A4624.jpg</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4630.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4630.jpg">
-                            <div class="carousel-description">Описание товара LS5A4630.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4634.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4634.jpg">
-                            <div class="carousel-description">Описание товара LS5A4634.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4638.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4638.jpg">
-                            <div class="carousel-description">Описание товара LS5A4638.jpg</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4640.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4640.jpg">
-                            <div class="carousel-description">Описание товара LS5A4640.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4642.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4642.jpg">
-                            <div class="carousel-description">Описание товара LS5A4642.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4655.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4655.jpg">
-                            <div class="carousel-description">Описание товара LS5A4655.jpg</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4666.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4666.jpg">
-                            <div class="carousel-description">Описание товара LS5A4666.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4693.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4693.jpg">
-                            <div class="carousel-description">Описание товара LS5A4693.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4694.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4694.jpg">
-                            <div class="carousel-description">Описание товара LS5A4694.jpg</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4708.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4708.jpg">
-                            <div class="carousel-description">Описание товара LS5A4708.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4716.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4716.jpg">
-                            <div class="carousel-description">Описание товара LS5A4716.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4751.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4751.jpg">
-                            <div class="carousel-description">Описание товара LS5A4751.jpg</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4763.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4763.jpg">
-                            <div class="carousel-description">Описание товара LS5A4763.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4770.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4770.jpg">
-                            <div class="carousel-description">Описание товара LS5A4770.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4784.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4784.jpg">
-                            <div class="carousel-description">Описание товара LS5A4784.jpg</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4785.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4785.jpg">
-                            <div class="carousel-description">Описание товара LS5A4785.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4787.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4787.jpg">
-                            <div class="carousel-description">Описание товара LS5A4787.jpg</div>
-                        </div>
-                        <div class="col-4"><img src="image/items/LS5A4789.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4789.jpg">
-                            <div class="carousel-description">Описание товара LS5A4789.jpg</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row g-3">
-                        <div class="col-4"><img src="image/items/LS5A4803.jpg" class="d-block w-100"
-                                                alt="Antique Item LS5A4803.jpg">
-                            <div class="carousel-description">Описание товара LS5A4803.jpg</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeaturedItems" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselFeaturedItems" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Следующий</span>
-            </button>
+<div class="container text-center">
+    <img src="/image/logo.png" alt="Лого Elyse" class="logo hover-brightness">
+    <h1 class="mt-4">Добро пожаловать в мир антиквариата</h1>
+    <p>Здесь вы найдете уникальные предметы, которые расскажут свою историю.</p>
+
+    <div class="d-flex justify-content-center mt-3">
+        <!-- Кнопка "О магазине" -->
+        <div class="me-3"> <!-- Отступ справа от первого элемента -->
+            <a href="#">
+                <img src="/image/button_shop.png" alt="О магазине" class="about-icon hover-brightness"/>
+            </a>
         </div>
-    </section>
 
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Image 1">
-            </div>
-            <div class="col-md-4 mb-4">
-                <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Image 2">
-            </div>
-            <div class="col-md-4 mb-4">
-                <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Image 3">
-            </div>
-            <div class="col-md-4 mb-4">
-                <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Image 4">
-            </div>
-            <div class="col-md-4 mb-4">
-                <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Image 5">
-            </div>
-            <div class="col-md-4 mb-4">
-                <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Image 6">
-            </div>
+        <!-- Кнопка "Корзина" -->
+        <div class="icon-container">
+            <a href="#">
+                <img src="/image/cart.png" alt="Корзина" class="cart-icon hover-brightness"/>
+                <img src="/image/heart_nulled.png" alt="Корзина" class="cart-icon-h hover-brightness heart-icon"/>
+                <!-- Переключение сердечка при добавлении в корзину
+                <img src="/image/heart_full.png" alt="Корзина" class="cart-icon-h hover-brightness heart-icon"/>
+                -->
+            </a>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <!--
-    <section class="hero-section">
-        <div>
-            <h1>Откройте для себя вечный антиквариат</h1>
-            <p>Тщательно подобранная подборка винтажных сокровищ и предметов коллекционирования</p>
-            <a href="#" class="btn btn-primary btn-lg">Познакомьтесь с нашей коллекцией</a>
-        </div>
-    </section>
-    -->
 
-    <!-- Modal Sections -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel">Увеличенное изображение</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="modalImage" class="img-fluid" src="" alt="Увеличенное изображение">
-                </div>
-            </div>
-        </div>
+    <div class="contacts mt-5">
+        <a href="mailto:example@mail.com">
+            <img src="/image/contacts/email_2.png" alt="Почта" class="contact-icon hover-brightness">
+        </a>
+        <a href="https://wa.me/your-number">
+            <img src="/image/contacts/wa_2.png" alt="WhatsApp" class="contact-icon hover-brightness">
+        </a>
+        <a href="https://t.me/your-telegram">
+            <img src="/image/contacts/tg_2.png" alt="Telegram" class="contact-icon hover-brightness">
+        </a>
     </div>
 
-    <!-- Contact Modal -->
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Контактная форма</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="contactPhone" class="form-label">Телефон</label>
-                            <input type="tel" class="form-control" id="contactPhone" placeholder="+7 (___) ___-__-__" >
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactMessage" class="form-label">Сообщение</label>
-                            <textarea class="form-control" id="contactMessage" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
-                    </form>
-                </div>
+    <!-- Новый раздел каталога товаров -->
+    <div class="row mt-5 mb-3 js-items-add">
+
+    </div>
+</div>
+
+<!-- Modal Sections -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Увеличенное изображение</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="img-fluid" src="" alt="Увеличенное изображение">
             </div>
         </div>
     </div>
 </div>
 
-<!-- Footer -->
-<footer class="footer text-center">
-    <div class="container">
-        <p>&copy; 2024 Антикварный магазин. Все права защищены.</p>
-        <a href="mailto:info@example.com">info@example.com</a> |
-        <a href="#">Политика конфиденциальности</a>
-    </div>
-</footer>
-
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

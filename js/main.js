@@ -1,74 +1,102 @@
-// ultra img
-document.querySelectorAll('#carouselFeaturedItems img').forEach(image => {
-    image.addEventListener('click', function() {
-        const modalImage = document.getElementById('modalImage');
-        modalImage.src = this.src; // Устанавливаем src для изображения в модальном окне
-        const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-        modal.show(); // Открываем модальное окно
+const imageIndexes = [
+    "LS5A4548.jpg",
+    "LS5A4553.jpg",
+    "LS5A4562.jpg",
+    "LS5A4564.jpg",
+    "LS5A4583.jpg",
+    "LS5A4596.jpg",
+    "LS5A4600.jpg",
+    "LS5A4603.jpg",
+    "LS5A4624.jpg",
+    "LS5A4630.jpg",
+    "LS5A4634.jpg",
+    "LS5A4638.jpg",
+    "LS5A4640.jpg",
+    "LS5A4642.jpg",
+    "LS5A4655.jpg",
+    "LS5A4666.jpg",
+    "LS5A4693.jpg",
+    "LS5A4694.jpg",
+    "LS5A4708.jpg",
+    "LS5A4716.jpg",
+    "LS5A4751.jpg",
+    "LS5A4763.jpg",
+    "LS5A4770.jpg",
+    "LS5A4784.jpg",
+    "LS5A4785.jpg",
+    "LS5A4787.jpg",
+    "LS5A4789.jpg",
+    "LS5A4803.jpg"
+];
+
+document.getElementById("loading").style.display = "flex";
+window.addEventListener("load", function() {
+    document.getElementById("loading").style.display = "none";
+
+    // ultra img
+    document.querySelectorAll('img').forEach(image => {
+        image.addEventListener('click', function() {
+            const cardParent = this.closest('.card');
+
+            if (!cardParent) {
+                return;
+            }
+
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = this.src.replace(/\/little/g, '');
+            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+            modal.show();
+        });
     });
 });
 
+// gen items
+function addItems() {
+    var container = document.querySelector('.js-items-add');
 
-// carousel
-/*document.addEventListener("DOMContentLoaded", function() {
-    const imageIndexes = [
-        'LS5A4564.jpg',
-        'LS5A4583.jpg',
-        'LS5A4596.jpg',
-        'LS5A4600.jpg',
-        'LS5A4603.jpg',
-        'LS5A4624.jpg',
-        'LS5A4630.jpg',
-        'LS5A4634.jpg',
-        'LS5A4638.jpg',
-        'LS5A4640.jpg',
-        'LS5A4642.jpg',
-        'LS5A4655.jpg',
-        'LS5A4666.jpg',
-        'LS5A4693.jpg',
-        'LS5A4694.jpg',
-        'LS5A4708.jpg',
-        'LS5A4716.jpg',
-        'LS5A4751.jpg',
-        'LS5A4763.jpg',
-        'LS5A4770.jpg',
-        'LS5A4784.jpg',
-        'LS5A4785.jpg',
-        'LS5A4787.jpg',
-        'LS5A4789.jpg',
-        'LS5A4803.jpg',
-    ];
+    for (var i = 0; i < imageIndexes.length; i++) {
+        // Создание элементов
+        var colDiv = document.createElement('div');
+        colDiv.className = 'col-md-4 mb-3';
 
-    const imageContainer = document.getElementById("image-items");
+        var cardDiv = document.createElement('div');
+        cardDiv.className = 'card';
 
-    for (let i = 0; i < imageIndexes.length; i += 3) {
-        const carouselItemDiv = document.createElement("div");
-        carouselItemDiv.className = "carousel-item" + (i === 0 ? " active" : "");
+        var img = document.createElement('img');
+        img.src = '/image/items/little/' + imageIndexes[i];
+        img.className = 'card-img-top hover-brightness';
+        img.alt = 'Товар ' + (i + 1);
 
-        const rowDiv = document.createElement("div");
-        rowDiv.className = "row g-3";
+        var cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
 
-        for (let j = 0; j < 3; j++) {
-            if (i + j < imageIndexes.length) {
-                const colDiv = document.createElement("div");
-                colDiv.className = "col-4";
+        var cardTitle = document.createElement('h5');
+        cardTitle.className = 'card-title';
+        cardTitle.innerText = 'Товар ' + (i + 1);
 
-                const imgElement = document.createElement("img");
-                imgElement.src = `image/items/${imageIndexes[i + j]}`;
-                imgElement.className = "d-block w-100";
-                imgElement.alt = `Antique Item ${imageIndexes[i + j]}`;
+        var priceContainer = document.createElement('div');
+        priceContainer.className = 'price-container';
 
-                const captionDiv = document.createElement("div");
-                captionDiv.className = "carousel-caption";
-                captionDiv.textContent = `Описание товара ${imageIndexes[i + j]}`;
+        var priceOutline = document.createElement('img');
+        priceOutline.src = '/image/contur.png';
+        priceOutline.alt = 'Контур цены';
+        priceOutline.className = 'price-outline hover-brightness';
 
-                colDiv.appendChild(imgElement);
-                colDiv.appendChild(captionDiv);
-                rowDiv.appendChild(colDiv);
-            }
-        }
+        var priceSpan = document.createElement('span');
+        priceSpan.className = 'price';
+        priceSpan.innerText = (1000 * (i + 1)) + ' ₽';  // Пример формирования цены
 
-        carouselItemDiv.appendChild(rowDiv);
-        imageContainer.appendChild(carouselItemDiv);
+        // Сборка элементов вместе
+        priceContainer.appendChild(priceOutline);
+        priceContainer.appendChild(priceSpan);
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(priceContainer);
+        cardDiv.appendChild(img);
+        cardDiv.appendChild(cardBody);
+        colDiv.appendChild(cardDiv);
+
+        container.appendChild(colDiv);
     }
-});*/
+}
+
+addItems();
