@@ -43,7 +43,10 @@ window.addEventListener("load", function() {
             }
 
             const modalImage = document.getElementById('modalImage');
-            modalImage.src = this.src.replace(/\/little/g, '');
+            const imageHref = document.getElementById('imageHref');
+            const hrefUri = this.src.replace(/\/little/g, '');
+            modalImage.src = hrefUri;
+            imageHref.href = hrefUri;
             const modal = new bootstrap.Modal(document.getElementById('imageModal'));
             modal.show();
         });
