@@ -38,33 +38,32 @@
 
     <div class="d-flex justify-content-center mt-3">
         <!-- Кнопка "О магазине" -->
-        <div class="me-3"> <!-- Отступ справа от первого элемента -->
+        <div class="h-none"> <!-- Отступ справа от первого элемента -->
             <a href="#">
                 <img src="/image/button_shop.png" alt="О магазине" class="about-icon hover-brightness"/>
             </a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal" style="text-decoration: none; display: inline;">
+                <img src="/image/feed_back.png" alt="Обратная связь" class="about-icon hover-brightness"/>
+            </a>
         </div>
 
-        <!-- Кнопка "Корзина" -->
+        <!-- Кнопка "Корзина"
         <div class="icon-container">
             <a href="#">
                 <img src="/image/cart.png" alt="Корзина" class="cart-icon hover-brightness"/>
                 <img src="/image/heart_nulled.png" alt="Корзина" class="cart-icon-h hover-brightness heart-icon"/>
-                <!-- Переключение сердечка при добавлении в корзину
                 <img src="/image/heart_full.png" alt="Корзина" class="cart-icon-h hover-brightness heart-icon"/>
-                -->
             </a>
         </div>
+        -->
     </div>
 
 
     <div class="contacts mt-5">
-        <a href="mailto:example@mail.com">
-            <img src="/image/contacts/email_2.png" alt="Почта" class="contact-icon hover-brightness">
+        <a href="https://wa.me/79169797128" target="_blank">
+            <img src="/image/contacts/wa.png" alt="WhatsApp" class="contact-icon hover-brightness">
         </a>
-        <a href="https://wa.me/your-number">
-            <img src="/image/contacts/wa_2.png" alt="WhatsApp" class="contact-icon hover-brightness">
-        </a>
-        <a href="https://t.me/your-telegram">
+        <a href="https://t.me/IlyaKomolov" target="_blank">
             <img src="/image/contacts/tg_2.png" alt="Telegram" class="contact-icon hover-brightness">
         </a>
     </div>
@@ -80,7 +79,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="imageModalLabel">Увеличенное изображение</h5>
+                <h5 class="modal-title text-elyse" id="imageModalLabel">Увеличенное изображение</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div class="modal-body">
@@ -89,6 +88,34 @@
                 <div class="container">
                     <a id="imageHref" href="#" target="_blank">Открыть полное изображение</a>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно "Обратная связь" -->
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-elyse" id="feedbackModalLabel">Обратная связь</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form id="feedback-form">
+                    <div class="mb-3">
+                        <label for="phone" class="form-label text-elyse">Номер телефона</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Введите номер телефона" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label text-elyse">Описание</label>
+                        <textarea class="form-control" id="description" rows="3" placeholder="Введите ваше описание" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="submit" class="btn btn-primary" form="feedback-form">Отправить</button>
             </div>
         </div>
     </div>

@@ -6,7 +6,8 @@ body {
     background-color: #BEAB8F;
     background-attachment: fixed;
     color: #E2E1CF;
-    font-family: Arial, sans-serif;
+    font-family: Caslon, sans-serif;
+    -webkit-background-size: cover;
 }
 
 
@@ -18,6 +19,20 @@ body {
 
 .contacts {
     margin-top: 30px;
+}
+
+.contacts a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.h-none a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.text-elyse {
+    color: #A49876;
 }
 
 .contact-icon {

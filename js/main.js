@@ -91,7 +91,7 @@ function addItems() {
 
         // Сборка элементов вместе
         priceContainer.appendChild(priceOutline);
-        priceContainer.appendChild(priceSpan);
+        // priceContainer.appendChild(priceSpan);
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(priceContainer);
         cardDiv.appendChild(img);
