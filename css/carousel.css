@@ -1,0 +1,112 @@
+.carousel-container {
+    background-color: white; /* Цвет фона карусели */
+    border-radius: 15px; /* Скругленные углы */
+    padding: 20px; /* Отступы вокруг карусели */
+    margin: auto; /* Центрирование карусели */
+    max-width: 800px; /* Максимальная ширина карусели */
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* Скругленные углы */
+    width: 200px; /* Установите ширину */
+    height: 200px; /* Установите высоту */
+    margin: auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Изображения будут выравнены независимо от их размера */
+}
+
+.carousel-item p {
+    text-align: center;
+    color: black; /* Цвет текста описания */
+    margin: 10px 0 0; /* Отступы вокруг текста описания */
+    font-size: 1em; /* Базовый размер текста */
+}
+
+/* Например, уменьшение шрифта при меньших экранах */
+@media (max-width: 768px) {
+    .carousel-item p {
+        font-size: 0.8em; /* Уменьшается на 20% */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item p {
+        font-size: 0.6em;
+    }
+}
+
+.carousel-controls {
+    display: flex; /* Для выравнивания стрелок */
+    justify-content: space-between; /* Равное расстояние между стрелками */
+    margin-top: 10px; /* Отступ между изображением и стрелками */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Цвет стрелок */
+    border-radius: 50%; /* Округление стрелок */
+    padding: 10px; /* Отступ для стрелок */
+}
+
+/* Настройка высоты для маленьких изображений */
+.carousel-item {
+    padding: 0 20px; /* Зазор между каруселью и изображениями */
+}
+
+.carousel-item img {
+    max-height: 254px;
+    border-radius: 30px;
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: auto;
+    }
+}
+
+img.size-p {
+    max-height: 320px;
+    object-fit: fill;
+}
+
+.carousel-control-prev {
+    left: -150px; /* Сдвигаем влево на 150 пикселей */
+}
+
+.carousel-control-next {
+    right: -150px; /* Сдвигаем вправо на 150 пикселей */
+}
+
+@media (max-width: 480px) {
+    .carousel-control-prev {
+        left: 0; /* Сдвигаем влево на 150 пикселей */
+    }
+
+    .carousel-control-next {
+        right: 0; /* Сдвигаем вправо на 150 пикселей */
+    }
+}
+
+/** indicators */
+.carousel-indicators button.active {
+    background-color: #C9BFA4;
+}
+.carousel-indicators[data-bs-target] {
+    background-color: #C3C2B0;
+}

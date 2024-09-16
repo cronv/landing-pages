@@ -1,0 +1,24 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.mt-link {
+    margin: 10px;
+}
+.btn-none {
+    background: none; /* Удаляем фоновый цвет */
+    border: none;     /* Удаляем рамку */
+    color: inherit;   /* Устанавливаем цвет текста по умолчанию */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+.page-link:hover, .page-link:focus {
+    background-color: var(--bs-active-bg-pagination-hf); /* задаем цвет фона при наведении */
+    color: inherit; /* задаем цвет текста при наведении */
+    filter: brightness(99%);
+    transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+.page-active {
+    --bs-bg-opacity:1;
+    background-color: var(--bs-active-bg-pagination);
+}

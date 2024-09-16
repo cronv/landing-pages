@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Антиквариат - Elyse</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="icon" href="/image/icons/favicon.ico" type="image/x-icon">
     <!-- iOS -->
     <link rel="apple-touch-icon" sizes="120x120" href="/image/icons/apple-touch-icon-120.png">
@@ -21,9 +19,10 @@
 
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
-    <script src="/js/main.js" defer></script>
+    <title>Лэндинг</title>
 </head>
-<body class="bg-image">
+<body>
+
 <!-- Панель загрузки сайта -->
 <div id="loading">
     <div class="spinner-border" role="status">
@@ -31,46 +30,294 @@
     </div>
 </div>
 
-<div class="container text-center">
-    <img src="/image/logo.png" alt="Лого Elyse" class="logo hover-brightness">
-    <h1 class="mt-4">Добро пожаловать в мир антиквариата</h1>
-    <p>Здесь вы найдете уникальные предметы, которые расскажут свою историю.</p>
-
-    <div class="d-flex justify-content-center mt-3">
-        <!-- Кнопка "О магазине" -->
-        <div class="h-none"> <!-- Отступ справа от первого элемента -->
-            <a href="#">
-                <img src="/image/button_shop.png" alt="О магазине" class="about-icon hover-brightness"/>
-            </a>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal" style="text-decoration: none; display: inline;">
-                <img src="/image/feed_back.png" alt="Обратная связь" class="about-icon hover-brightness"/>
-            </a>
+<!-- Заголовок с изображением -->
+<div class="header-bg container-fluid">
+    <div class="row">
+        <div class="col-md-6 d-flex flex-column align-items-center column-1">
+            <img src="/image/logo.png" alt="Лого Elyse" class="logo hover-brightness">
+            <p class="mt-4 text-center text-elyse-l text-wrap-550 hover-brightness fs-5"> <!-- Уменьшен шрифт для мобильных -->
+                Коллекция антикварных винтажных предметов и предметов современного искусства
+            </p>
         </div>
+        <div class="col-md-6 d-flex flex-column align-items-center column-right column-2 mt-12">
+            <div class="d-flex justify-content-center mt-3"> <!-- Уменьшен отступ для мобильных -->
+                <div class="h-none">
+                    <a href="#">
+                        <img src="/image/button_shop.png" alt="О магазине" class="about-icon hover-brightness img-fluid" />
+                    </a>
+                </div>
+            </div>
 
-        <!-- Кнопка "Корзина"
-        <div class="icon-container">
-            <a href="#">
-                <img src="/image/cart.png" alt="Корзина" class="cart-icon hover-brightness"/>
-                <img src="/image/heart_nulled.png" alt="Корзина" class="cart-icon-h hover-brightness heart-icon"/>
-                <img src="/image/heart_full.png" alt="Корзина" class="cart-icon-h hover-brightness heart-icon"/>
-            </a>
+            <div class="contacts mt-3 d-flex justify-content-center"> <!-- Уменьшен отступ для мобильных -->
+                <p class="fs-4 text-elyse-l"> <!-- Уменьшен шрифт для мобильных -->
+                    <a href="https://wa.me/79169797128" target="_blank" class="inherit-color hover-brightness">
+                        <strong>+7 (916) 979-71-28</strong>
+                    </a>
+                </p>
+            </div>
+
+            <div class="contacts mt-3 d-flex justify-content-center">
+                <a href="mailto:logakmlv@gmail.com" target="_blank">
+                    <img src="/image/contacts/email.png" alt="E-mail" class="contact-icon hover-brightness img-fluid">
+                </a>
+                <a href="https://wa.me/79169797128" target="_blank">
+                    <img src="/image/contacts/wa.png" alt="WhatsApp" class="contact-icon hover-brightness img-fluid">
+                </a>
+                <a href="https://t.me/IlyaKomolov" target="_blank">
+                    <img src="/image/contacts/tg_2.png" alt="Telegram" class="contact-icon hover-brightness img-fluid">
+                </a>
+            </div>
         </div>
-        -->
-    </div>
-
-
-    <div class="contacts mt-5">
-        <a href="https://wa.me/79169797128" target="_blank">
-            <img src="/image/contacts/wa.png" alt="WhatsApp" class="contact-icon hover-brightness">
-        </a>
-        <a href="https://t.me/IlyaKomolov" target="_blank">
-            <img src="/image/contacts/tg_2.png" alt="Telegram" class="contact-icon hover-brightness">
-        </a>
     </div>
 
     <!-- Новый раздел каталога товаров -->
-    <div class="row mt-5 mb-3 js-items-add">
+    <div class="row mt-4 mb-3 js-items-add"> <!-- Уменьшен отступ для мобильных -->
+        <!-- Ваши элементы каталога товаров будут добавлены здесь -->
+    </div>
+</div>
 
+
+
+
+<!-- Меню -->
+<nav class="menu navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav w-100">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Каталог</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Доставка и оплата</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Индивидуальный подбор подарка</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                    Обратная связь
+                </a>
+            </li>
+
+            <!-- LK, CART
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img src="/image/lk.png" alt="Войти" style="width: 30px;"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img src="/image/cart.png" alt="Корзина" style="width: 25px;"></a>
+            </li>
+            -->
+        </ul>
+        <div class="d-flex ms-auto">
+            <label>
+                <input type="text" id="searchInput" placeholder="Поиск" class="form-control custom-input" maxlength="32" style="width: 200px;">
+            </label>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Разделы -->
+<div class="container panel-bg">
+    <h2 class="section-title">РАЗДЕЛЫ</h2>
+    <div class="text-end">
+        <p class="">Фильтр</p>
+    </div>
+
+    <!-- Карусель -->
+    <div id="carouselExample22" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="/image/catalog/LS5A4548.jpg" class="hover-brightness d-block w-100" alt="Картинка 1">
+                        <div class="container">
+                            <p>Единичные<br> экземпляры</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <img src="/image/catalog/LS5A4553.jpg" class="hover-brightness d-block w-100" alt="Картинка 2">
+                        <div class="container">
+                            <p>Подарки<br> с историей</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <img src="/image/catalog/LS5A4789.jpg" class="hover-brightness d-block w-100" alt="Картинка 3">
+                        <div class="container">
+                            <p>Иконы</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <img src="/image/catalog/LS5A4638.jpg" class="hover-brightness d-block w-100" alt="Картинка 4">
+                        <div class="container">
+                            <p>Посуда, <br>вазы</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="/image/catalog/LS5A4548.jpg" class="hover-brightness d-block w-100" alt="Картинка 5">
+                        <p>Заполните<br> каталог</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample22" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample22" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
+
+    <!-- Разделитель -->
+    <img src="/image/separator-1.png" alt="Разделитель" class="img-fluid my-4">
+
+    <div class="row">
+        <div class="row-background"></div>
+
+        <div class="col-md-4 product">
+            <div id="carouselProduct1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/image/items/little/LS5A4564.jpg" class="d-block w-100 size-p" alt="Товар 1 - Изображение 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/image/items/little/LS5A4583.jpg" class="d-block w-100 size-p" alt="Товар 1 - Изображение 2">
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselProduct1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Изображение 1"></button>
+                    <button type="button" data-bs-target="#carouselProduct1" data-bs-slide-to="1" aria-label="Изображение 2"></button>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="star-rating mb-4">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <img src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
+                </div>
+                <!-- <h5 class="fw-bold">Название товара 1</h5> -->
+                <!-- <p>Цена: H руб.</p> -->
+                <!--  <button class="btn btn-dark btn-cart">Корзина</button> -->
+            </div>
+        </div>
+
+        <div class="col-md-4 product">
+            <div id="carouselProduct2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/image/items/little/LS5A4596.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/image/items/little/LS5A4600.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/image/items/little/LS5A4603.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/image/items/little/LS5A4624.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/image/items/little/LS5A4630.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 3">
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselProduct2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Изображение 1"></button>
+                    <button type="button" data-bs-target="#carouselProduct2" data-bs-slide-to="1" aria-label="Изображение 2"></button>
+                    <button type="button" data-bs-target="#carouselProduct2" data-bs-slide-to="2" aria-label="Изображение 3"></button>
+                    <button type="button" data-bs-target="#carouselProduct2" data-bs-slide-to="3" aria-label="Изображение 3"></button>
+                    <button type="button" data-bs-target="#carouselProduct2" data-bs-slide-to="4" aria-label="Изображение 3"></button>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="star-rating mb-4">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <img src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
+                </div>
+                <!-- <h5 class="fw-bold">Название товара 2</h5> -->
+                <!-- <p>Цена: H руб.</p> -->
+                <!-- <button class="btn btn-dark btn-cart">Корзина</button> -->
+            </div>
+        </div>
+
+        <div class="col-md-4 product">
+            <div id="carouselProduct3" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/image/items/little/LS5A4634.jpg" class="d-block w-100 size-p" alt="Товар 3 - Изображение 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/image/items/little/LS5A4638.jpg" class="d-block w-100 size-p" alt="Товар 3 - Изображение 2">
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselProduct3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Изображение 1"></button>
+                    <button type="button" data-bs-target="#carouselProduct3" data-bs-slide-to="1" aria-label="Изображение 2"></button>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="star-rating mb-4">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <img src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
+                </div>
+                <!-- <h5 class="fw-bold">Название товара 3</h5> -->
+                <!-- <p>Цена: H руб.</p> -->
+                <!-- <button class="btn btn-dark btn-cart">Корзина</button> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Пагинация -->
+    <div class="pagination mt-4">
+        <ul class="pagination">
+            <li class="page-item">
+                <a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">
+                    1
+                </a>
+            </li>
+            <li class="page-item text-elyse-l">
+                <a href="#" class="page-link btn-none rounded-circle page-active d-flex justify-content-center align-items-center icon-small mt-link">
+                    2
+                </a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">
+                    3</a>
+            </li>
+            <li class="page-item">
+                <span class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">
+                    ...
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Разделитель -->
+    <img src="/image/separator-1.png" alt="Разделитель" class="img-fluid my-4">
+
+    <!-- О магазине и особенности выбора -->
+    <div class="section-title">
+        <h2>О МАГАЗИНЕ</h2>
+        <p class="text-wrap-600">
+            Старинные предметы ценятся не только коллекционерами и антикварами. Вещи из
+            других эпох не оставляют равнодушными даже убежденных скептиков. Они доставляют
+            эстетическое наслаждение, привносят позитивную энергетику, являются растущим в цене
+            активом, Подобные изделия создают ощущение уюта, оживляют интерьер
+            пьер, привлекают неповторимой стилистикой. В каждой антикварной вещи - части-
+            ца души мастера, тепло его сердца.
+        </p>
+
+        <h2>ОСОБЕННОСТИ ВЫБОРА</h2>
+        <p>
+            Выбор презента - приятное, но непростое занятие, особенно, если речь идет об
+            антикварных предметах. Стоит учитывать предпочтения человека, которому
+            преданазначен подарок. Но если вы такой информацией не располагаете, ориентируйтесь
+            на собственный вкус или воспользуйтесь помощью наших консультантов.
+        </p>
     </div>
 </div>
 
@@ -79,7 +326,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-elyse" id="imageModalLabel">Увеличенное изображение</h5>
+                <h5 class="modal-title" id="imageModalLabel">Увеличенное изображение</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div class="modal-body">
@@ -98,17 +345,17 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-elyse" id="feedbackModalLabel">Обратная связь</h5>
+                <h5 class="modal-title" id="feedbackModalLabel">Обратная связь</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div class="modal-body">
                 <form id="feedback-form">
                     <div class="mb-3">
-                        <label for="phone" class="form-label text-elyse">Номер телефона</label>
+                        <label for="phone" class="form-label">Номер телефона</label>
                         <input type="tel" class="form-control" id="phone" placeholder="Введите номер телефона" required>
                     </div>
                     <div class="mb-3">
-                        <label for="description" class="form-label text-elyse">Описание</label>
+                        <label for="description" class="form-label">Описание</label>
                         <textarea class="form-control" id="description" rows="3" placeholder="Введите ваше описание" required></textarea>
                     </div>
                 </form>
@@ -121,7 +368,8 @@
     </div>
 </div>
 
+<script src="/js/popper/popper.min.js"></script>
 <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script type="module" src="/js/main.js"></script>
 </body>
-
 </html>

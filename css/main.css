@@ -1,21 +1,142 @@
+@import 'carousel.css';
+@import 'modal.css';
+@import 'pagination.css';
+
+:root{
+    --bs-base: #E2E1CF;
+    --bs-base-2: #A49876;
+    --bs-active-bg-pagination: #980108;
+    --bs-active-bg-pagination-hf: #a68184;
+}
+
 body {
-    background-image: url('/image/body.png');
+    background-color: var(--bs-base);
+}
+
+body.modal-open {
+    overflow: auto !important;
+    padding-right: 0 !important;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header-bg {
+    background-image: url(/image/body.png);
     background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-color: #BEAB8F;
-    background-attachment: fixed;
-    color: #E2E1CF;
-    font-family: Caslon, sans-serif;
-    -webkit-background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    margin-left: -2px;
+    color: var(--bs-base);
+    height: 450px;
+    width: 101%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .header-bg {
+        padding-left: 0; /* Уберите отступы при маленьком размере экрана */
+        padding-right: 0;
+    }
+    .menu {
+        width: 100%; /* Меню должно растягиваться на всю ширину */
+    }
 }
 
 
+.panel-bg {
+    padding: 20px;
+    padding-right: 6rem !important;
+    padding-left: 6rem !important;
+}
+
+
+* {
+    box-sizing: border-box; /* Убедитесь, что все элементы имеют box-sizing border-box */
+    margin: 0; /* Убираем маргины по умолчанию */
+    padding: 0; /* Убираем паддинги по умолчанию */
+}
+.row:has(.row-background) {
+    /* Убираем дополнительные отступы */
+}
+
+.row-background {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/image/logo_panel.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(76%);
+    z-index: 1;
+}
+
+/* Убедитесь, что внутри .row все элементы имеют более высокий z-index */
+.row:has(.row-background) * {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 480px) {
+    .header-bg {
+        height: 200px;
+        margin-left: 0;
+    }
+}
+
+.column-1 {
+    margin-top: 140px;
+}
+.column-2 {
+    margin-top: 25px;
+}
+
+@media (max-width: 768px) { /* Например, для экранов меньше 768px */
+    .header-bg {
+        height: auto; /* Высота остается 450px */
+    }
+
+    .column {
+        margin-top: 0; /* Убираем верхний отступ */
+    }
+}
+
+.inherit-color {
+    color: inherit;
+}
 
 .logo {
-    width: 256px;
+    width: 21.7em;
     height: 256px;
 }
+
+@media (max-width: 480px) {
+    .logo {
+        width: 80%;
+        height: auto;
+        max-width: 200px;
+    }
+
+    .contact-icon, .about-icon {
+        width: 25px; /* Установите нужный размер иконок */
+        height: auto;
+    }
+
+    .text-elyse-l {
+        font-size: 1.2rem; /* Уменьшите шрифт текста на мобильных устройствах */
+    }
+}
+
 
 .contacts {
     margin-top: 30px;
@@ -32,7 +153,19 @@ body {
 }
 
 .text-elyse {
-    color: #A49876;
+    color: var(--bs-base);
+}
+.text-elyse-l {
+    color: #e2e1cf;
+}
+
+.text-wrap-350 {
+    max-width: 350px;
+    display: inline-block;
+}
+.text-wrap-550 {
+    max-width: 550px;
+    display: inline-block;
 }
 
 .contact-icon {
@@ -86,7 +219,7 @@ body {
 
 /** etc */
 .about-icon {
-    width: 180px;
+    width: 250px;
     margin-right: 5px;
 }
 
@@ -109,4 +242,99 @@ body {
 .hover-brightness:hover {
     filter: brightness(76%);
     transition: filter 0.3s ease;
+}
+
+.icon-small {
+    width: 60px;
+    height: 60px;
+    font-size: 2.3rem;
+}
+
+.btn-cart {
+    width: 50% !important;
+    border-radius: 20px;
+}
+
+.mt-10 {
+    margin-top: 10rem !important;
+}
+
+.mt-12 {
+    margin-top: 12rem !important;
+}
+
+.mt-15 {
+    margin-top: 15rem !important;
+}
+
+.custom-input {
+    background-color: black; /* Цвет фона поля ввода */
+    color: var(--bs-base); /* Цвет текста ввода */
+}
+.custom-input:focus {
+    background-color: black; /* Цвет фона поля ввода */
+    color: var(--bs-base); /* Цвет текста ввода */
+}
+
+.custom-input::placeholder {
+    color: var(--bs-base); /* Цвет текста плейсхолдера */
+    opacity: 1; /* Установка непрозрачности для плейсхолдера (по умолчанию может быть меньше 1) */
+}
+
+.menu {
+    background-color: black;
+}
+
+.menu a {
+    color: var(--bs-base);
+}
+
+.section-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.product {
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 30px;
+}
+
+.separator {
+    position: relative;
+    padding-right: 15px; /* Отступ от текста до разделителя */
+}
+
+.separator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0; /* Отображаем справа */
+    transform: translateY(-50%); /* Центрируем по вертикали */
+    width: 1px; /* Ширина разделителя */
+    height: 20px; /* Высота разделителя */
+    background-color: #ccc; /* Цвет разделителя */
+}
+
+.separator:last-child::after {
+    content: none; /* Убираем разделитель у последнего элемента */
+}
+@media (max-width: 768px) {  /* Применяется для экранов меньше 768px */
+    .pagination .page-link {
+        padding: 5px 10px;  /* Уменьшение отступов */
+        font-size: 14px;     /* Уменьшение размера шрифта */
+        width: 30px;         /* Установить фиксированную ширину */
+        height: 30px;        /* Установить фиксированную высоту */
+    }
 }

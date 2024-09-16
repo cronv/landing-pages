@@ -1,0 +1,37 @@
+.modal-content {
+    background-color: var(--bs-base-2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-bottom: 1px solid #ccc;
+}
+
+.modal textarea, .modal input,
+.modal textarea:focus, .modal input:focus {
+    background-color: var(--bs-base-2);
+    filter: brightness(76%);
+}
+
+.modal-title {
+    color: inherit;
+}
+
+.modal-body {
+    color: black;
+}
+
+.modal-footer {
+    border-top: 1px solid #ccc;
+}
+
+.btn-primary {
+    background-color: #778A57FF;
+    border-color: #778A57FF;
+}
+
+.btn-primary:hover {
+    background-color: #5f723f;
+    border-color: #5F723FFF;
+}
