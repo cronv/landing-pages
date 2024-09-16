@@ -19,7 +19,7 @@
 
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Лэндинг</title>
+    <title>Elyse — Коллекция Элегантного Искусства: Антиквариат и Современность</title>
 </head>
 <body>
 
@@ -35,12 +35,12 @@
     <div class="row">
         <div class="col-md-6 d-flex flex-column align-items-center column-1">
             <img src="/image/logo.png" alt="Лого Elyse" class="logo hover-brightness">
-            <p class="mt-4 text-center text-elyse-l text-wrap-550 hover-brightness fs-5"> <!-- Уменьшен шрифт для мобильных -->
+            <p class="mt-4 text-center text-elyse-l text-wrap-550 hover-brightness fs-5">
                 Коллекция антикварных винтажных предметов и предметов современного искусства
             </p>
         </div>
         <div class="col-md-6 d-flex flex-column align-items-center column-right column-2 mt-12">
-            <div class="d-flex justify-content-center mt-3"> <!-- Уменьшен отступ для мобильных -->
+            <div class="d-flex justify-content-center mt-3">
                 <div class="h-none">
                     <a href="#">
                         <img src="/image/button_shop.png" alt="О магазине" class="about-icon hover-brightness img-fluid" />
@@ -48,8 +48,8 @@
                 </div>
             </div>
 
-            <div class="contacts mt-3 d-flex justify-content-center"> <!-- Уменьшен отступ для мобильных -->
-                <p class="fs-4 text-elyse-l"> <!-- Уменьшен шрифт для мобильных -->
+            <div class="contacts mt-3 d-flex justify-content-center">
+                <p class="fs-4 text-elyse-l">
                     <a href="https://wa.me/79169797128" target="_blank" class="inherit-color hover-brightness">
                         <strong>+7 (916) 979-71-28</strong>
                     </a>
@@ -71,7 +71,7 @@
     </div>
 
     <!-- Новый раздел каталога товаров -->
-    <div class="row mt-4 mb-3 js-items-add"> <!-- Уменьшен отступ для мобильных -->
+    <div class="row mt-4 mb-3 js-items-add">
         <!-- Ваши элементы каталога товаров будут добавлены здесь -->
     </div>
 </div>
@@ -129,36 +129,32 @@
             <div class="carousel-item active">
                 <div class="row">
                     <div class="col-3">
-                        <img src="/image/catalog/LS5A4548.jpg" class="hover-brightness d-block w-100" alt="Картинка 1">
+                        <img src="/image/catalog/LS5A4548.jpg" class="hover-brightness d-block w-100 js-load-products" alt="Картинка 1"
+                             data-catalog-id="1">
                         <div class="container">
                             <p>Единичные<br> экземпляры</p>
                         </div>
                     </div>
                     <div class="col-3">
-                        <img src="/image/catalog/LS5A4553.jpg" class="hover-brightness d-block w-100" alt="Картинка 2">
+                        <img src="/image/catalog/LS5A4553.jpg" class="hover-brightness d-block w-100 js-load-products" alt="Картинка 2"
+                             data-catalog-id="2">
                         <div class="container">
                             <p>Подарки<br> с историей</p>
                         </div>
                     </div>
                     <div class="col-3">
-                        <img src="/image/catalog/LS5A4789.jpg" class="hover-brightness d-block w-100" alt="Картинка 3">
+                        <img src="/image/catalog/LS5A4789.jpg" class="hover-brightness d-block w-100 js-load-products" alt="Картинка 3"
+                             data-catalog-id="3">
                         <div class="container">
                             <p>Иконы</p>
                         </div>
                     </div>
                     <div class="col-3">
-                        <img src="/image/catalog/LS5A4638.jpg" class="hover-brightness d-block w-100" alt="Картинка 4">
+                        <img src="/image/catalog/LS5A4638.jpg" class="hover-brightness d-block w-100 js-load-products" alt="Картинка 4"
+                             data-catalog-id="4">
                         <div class="container">
                             <p>Посуда, <br>вазы</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="/image/catalog/LS5A4548.jpg" class="hover-brightness d-block w-100" alt="Картинка 5">
-                        <p>Заполните<br> каталог</p>
                     </div>
                 </div>
             </div>
@@ -177,17 +173,17 @@
     <!-- Разделитель -->
     <img src="/image/separator-1.png" alt="Разделитель" class="img-fluid my-4">
 
-    <div class="row">
+    <div class="row js-rows">
         <div class="row-background"></div>
 
         <div class="col-md-4 product">
             <div id="carouselProduct1" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="/image/items/little/LS5A4564.jpg" class="d-block w-100 size-p" alt="Товар 1 - Изображение 1">
+                        <img src="/image/items/little/LS5A4564.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар">
                     </div>
                     <div class="carousel-item">
-                        <img src="/image/items/little/LS5A4583.jpg" class="d-block w-100 size-p" alt="Товар 1 - Изображение 2">
+                        <img src="/image/items/little/LS5A4583.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар">
                     </div>
                 </div>
                 <div class="carousel-indicators">
@@ -198,7 +194,7 @@
             <div class="text-center">
                 <div class="star-rating mb-4">
                     <span>⭐⭐⭐⭐⭐</span>
-                    <img src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
+                    <img class="hover-brightness" src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
                 </div>
                 <!-- <h5 class="fw-bold">Название товара 1</h5> -->
                 <!-- <p>Цена: H руб.</p> -->
@@ -210,19 +206,19 @@
             <div id="carouselProduct2" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="/image/items/little/LS5A4596.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 1">
+                        <img src="/image/items/little/LS5A4596.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар">
                     </div>
                     <div class="carousel-item">
-                        <img src="/image/items/little/LS5A4600.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 2">
+                        <img src="/image/items/little/LS5A4600.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар">
                     </div>
                     <div class="carousel-item">
-                        <img src="/image/items/little/LS5A4603.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 3">
+                        <img src="/image/items/little/LS5A4603.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар">
                     </div>
                     <div class="carousel-item">
-                        <img src="/image/items/little/LS5A4624.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 3">
+                        <img src="/image/items/little/LS5A4624.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар">
                     </div>
                     <div class="carousel-item">
-                        <img src="/image/items/little/LS5A4630.jpg" class="d-block w-100 size-p" alt="Товар 2 - Изображение 3">
+                        <img src="/image/items/little/LS5A4630.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар">
                     </div>
                 </div>
                 <div class="carousel-indicators">
@@ -236,7 +232,7 @@
             <div class="text-center">
                 <div class="star-rating mb-4">
                     <span>⭐⭐⭐⭐⭐</span>
-                    <img src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
+                    <img class="hover-brightness" src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
                 </div>
                 <!-- <h5 class="fw-bold">Название товара 2</h5> -->
                 <!-- <p>Цена: H руб.</p> -->
@@ -248,10 +244,10 @@
             <div id="carouselProduct3" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="/image/items/little/LS5A4634.jpg" class="d-block w-100 size-p" alt="Товар 3 - Изображение 1">
+                        <img src="/image/items/little/LS5A4634.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар 3 - Изображение 1">
                     </div>
                     <div class="carousel-item">
-                        <img src="/image/items/little/LS5A4638.jpg" class="d-block w-100 size-p" alt="Товар 3 - Изображение 2">
+                        <img src="/image/items/little/LS5A4638.jpg" class="d-block w-100 size-p hover-brightness" alt="Товар 3 - Изображение 2">
                     </div>
                 </div>
                 <div class="carousel-indicators">
@@ -262,7 +258,7 @@
             <div class="text-center">
                 <div class="star-rating mb-4">
                     <span>⭐⭐⭐⭐⭐</span>
-                    <img src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
+                    <img class="hover-brightness" src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
                 </div>
                 <!-- <h5 class="fw-bold">Название товара 3</h5> -->
                 <!-- <p>Цена: H руб.</p> -->
@@ -286,7 +282,8 @@
             </li>
             <li class="page-item">
                 <a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">
-                    3</a>
+                    3
+                </a>
             </li>
             <li class="page-item">
                 <span class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">

@@ -1,4 +1,5 @@
 import { imageIndexes } from './data/imageData.js';
+import { formattedImages } from './data/imageObjectData.js';
 
 var main = {
     imageIndexes: imageIndexes,
@@ -7,6 +8,7 @@ var main = {
         this.showLoading();
         this.setupImageModals();
         this.setupSearch();
+        this.setupCatalog();
         // this.addItems();
     },
 
@@ -20,12 +22,13 @@ var main = {
 
     setupImageModals: function() {
         document.querySelectorAll('img').forEach(image => {
-            image.addEventListener('click', (event) => {
-                const cardParent = event.target.closest('.card');
+            const check = image.closest('.product');
+            if (!check) return;
 
-                if (!cardParent) {
-                    return;
-                }
+            image.addEventListener('click', (event) => {
+                const cardParent = event.target.closest('.product');
+
+                if (!cardParent) return;
 
                 const modalImage = document.getElementById('modalImage');
                 const imageHref = document.getElementById('imageHref');
@@ -44,6 +47,61 @@ var main = {
             this.value = '';
             var myModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
             myModal.show();
+        });
+    },
+
+    setupCatalog: function() {
+        var self = this;
+        document.querySelectorAll('.js-load-products').forEach(button => {
+            button.addEventListener('click', function () {
+                const catalogId = parseInt(this.getAttribute('data-catalog-id'));
+
+                document.querySelector('.js-rows').innerHTML = '';
+
+                const filteredImages = formattedImages.filter(item => item.catalog_id === catalogId);
+                var carouselHTML = '<div class="row-background"></div>';
+
+                const groupedImages = filteredImages.reduce((acc, item) => {
+                    if (!acc[item.id]) {
+                        acc[item.id] = [];
+                    }
+                    acc[item.id].push(item);
+                    return acc;
+                }, {});
+
+                for (const group in groupedImages) {
+                    const images = groupedImages[group];
+                    const carouselId = `carouselProduct${group}`;
+
+                    carouselHTML += `
+                <div class="col-md-4 product">
+                    <div id="${carouselId}" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            ${images.map((img, index) => `
+                                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                    <img src="/image/items/little/${img.src}" class="d-block w-100 size-p hover-brightness" alt="Товар">
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="carousel-indicators">
+                            ${images.map((img, index) => `
+                                <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Изображение ${index + 1}"></button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="star-rating mb-4">
+                            <span>⭐⭐⭐⭐⭐</span>
+                            <img class="hover-brightness" src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
+                        </div>
+                    </div>
+                </div>`;
+
+                    document.querySelector('.js-rows').insertAdjacentHTML('beforeend', carouselHTML);
+                }
+
+                self.setupImageModals();
+            });
         });
     },
 
@@ -99,3 +157,4 @@ var main = {
 document.addEventListener('DOMContentLoaded', function() {
     main.init();
 });
+

@@ -1,37 +1,37 @@
 .carousel-container {
-    background-color: white; /* Цвет фона карусели */
-    border-radius: 15px; /* Скругленные углы */
-    padding: 20px; /* Отступы вокруг карусели */
-    margin: auto; /* Центрирование карусели */
-    max-width: 800px; /* Максимальная ширина карусели */
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: auto;
+    max-width: 800px;
 }
 
 .image-container {
     position: relative;
     overflow: hidden;
-    border-radius: 15px; /* Скругленные углы */
-    width: 200px; /* Установите ширину */
-    height: 200px; /* Установите высоту */
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
     margin: auto;
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Изображения будут выравнены независимо от их размера */
+    object-fit: cover;
 }
 
 .carousel-item p {
     text-align: center;
-    color: black; /* Цвет текста описания */
-    margin: 10px 0 0; /* Отступы вокруг текста описания */
-    font-size: 1em; /* Базовый размер текста */
+    color: black;
+    margin: 10px 0 0;
+    font-size: 1em;
 }
 
 /* Например, уменьшение шрифта при меньших экранах */
 @media (max-width: 768px) {
     .carousel-item p {
-        font-size: 0.8em; /* Уменьшается на 20% */
+        font-size: 0.8em;
     }
 }
 
@@ -42,21 +42,21 @@
 }
 
 .carousel-controls {
-    display: flex; /* Для выравнивания стрелок */
-    justify-content: space-between; /* Равное расстояние между стрелками */
-    margin-top: 10px; /* Отступ между изображением и стрелками */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: black; /* Цвет стрелок */
-    border-radius: 50%; /* Округление стрелок */
-    padding: 10px; /* Отступ для стрелок */
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
 }
 
 /* Настройка высоты для маленьких изображений */
 .carousel-item {
-    padding: 0 20px; /* Зазор между каруселью и изображениями */
+    padding: 0 20px;
 }
 
 .carousel-item img {
@@ -86,20 +86,20 @@ img.size-p {
 }
 
 .carousel-control-prev {
-    left: -150px; /* Сдвигаем влево на 150 пикселей */
+    left: -150px;
 }
 
 .carousel-control-next {
-    right: -150px; /* Сдвигаем вправо на 150 пикселей */
+    right: -150px;
 }
 
 @media (max-width: 480px) {
     .carousel-control-prev {
-        left: 0; /* Сдвигаем влево на 150 пикселей */
+        left: 0;
     }
 
     .carousel-control-next {
-        right: 0; /* Сдвигаем вправо на 150 пикселей */
+        right: 0;
     }
 }
 

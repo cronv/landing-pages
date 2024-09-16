@@ -41,11 +41,11 @@ html, body {
 
 @media (max-width: 768px) {
     .header-bg {
-        padding-left: 0; /* Уберите отступы при маленьком размере экрана */
+        padding-left: 0;
         padding-right: 0;
     }
     .menu {
-        width: 100%; /* Меню должно растягиваться на всю ширину */
+        width: 100%;
     }
 }
 
@@ -58,12 +58,9 @@ html, body {
 
 
 * {
-    box-sizing: border-box; /* Убедитесь, что все элементы имеют box-sizing border-box */
-    margin: 0; /* Убираем маргины по умолчанию */
-    padding: 0; /* Убираем паддинги по умолчанию */
-}
-.row:has(.row-background) {
-    /* Убираем дополнительные отступы */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .row-background {
@@ -101,13 +98,13 @@ html, body {
     margin-top: 25px;
 }
 
-@media (max-width: 768px) { /* Например, для экранов меньше 768px */
+@media (max-width: 768px) {
     .header-bg {
-        height: auto; /* Высота остается 450px */
+        height: auto;
     }
 
     .column {
-        margin-top: 0; /* Убираем верхний отступ */
+        margin-top: 0;
     }
 }
 
@@ -128,12 +125,12 @@ html, body {
     }
 
     .contact-icon, .about-icon {
-        width: 25px; /* Установите нужный размер иконок */
+        width: 25px;
         height: auto;
     }
 
     .text-elyse-l {
-        font-size: 1.2rem; /* Уменьшите шрифт текста на мобильных устройствах */
+        font-size: 1.2rem;
     }
 }
 
@@ -268,17 +265,17 @@ html, body {
 }
 
 .custom-input {
-    background-color: black; /* Цвет фона поля ввода */
-    color: var(--bs-base); /* Цвет текста ввода */
+    background-color: black;
+    color: var(--bs-base);
 }
 .custom-input:focus {
-    background-color: black; /* Цвет фона поля ввода */
-    color: var(--bs-base); /* Цвет текста ввода */
+    background-color: black;
+    color: var(--bs-base);
 }
 
 .custom-input::placeholder {
-    color: var(--bs-base); /* Цвет текста плейсхолдера */
-    opacity: 1; /* Установка непрозрачности для плейсхолдера (по умолчанию может быть меньше 1) */
+    color: var(--bs-base);
+    opacity: 1;
 }
 
 .menu {
@@ -313,28 +310,28 @@ html, body {
 
 .separator {
     position: relative;
-    padding-right: 15px; /* Отступ от текста до разделителя */
+    padding-right: 15px;
 }
 
 .separator::after {
     content: "";
     position: absolute;
     top: 50%;
-    right: 0; /* Отображаем справа */
-    transform: translateY(-50%); /* Центрируем по вертикали */
-    width: 1px; /* Ширина разделителя */
-    height: 20px; /* Высота разделителя */
-    background-color: #ccc; /* Цвет разделителя */
+    right: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background-color: #ccc;
 }
 
 .separator:last-child::after {
-    content: none; /* Убираем разделитель у последнего элемента */
+    content: none;
 }
-@media (max-width: 768px) {  /* Применяется для экранов меньше 768px */
+@media (max-width: 768px) {
     .pagination .page-link {
-        padding: 5px 10px;  /* Уменьшение отступов */
-        font-size: 14px;     /* Уменьшение размера шрифта */
-        width: 30px;         /* Установить фиксированную ширину */
-        height: 30px;        /* Установить фиксированную высоту */
+        padding: 5px 10px;
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
     }
 }
