@@ -31,7 +31,7 @@ var main = {
             if (!check) return;
 
             image.addEventListener('click', (event) => {
-                const cardParent = event.target.closest('.product');
+                const cardParent = event.target.closest('.carousel');
 
                 if (!cardParent) return;
 
@@ -129,7 +129,6 @@ var main = {
 
             // Создаем кнопки пагинации
             if (self.pagination.totalPages > 1) {
-                // Указываем номер текущей страницы
                 const currentPageIndex = self.pagination.currentPage - 1;
 
                 // Добавляем первую страницу
@@ -148,38 +147,39 @@ var main = {
                 // Добавляем многоточие между первой страницей и текущей
                 if (self.pagination.currentPage > 3 && self.pagination.totalPages > 4) {
                     const ellipsisItem = document.createElement('li');
-                    ellipsisItem.className = 'page-item'; // disabled для отображения
+                    ellipsisItem.className = 'page-item';
                     ellipsisItem.innerHTML = '<a href="javascript:void(0)" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">...</a>';
                     paginationContainer.appendChild(ellipsisItem);
                 }
 
                 // Добавляем страницы с номерами
-                for (let i = 2; i <= self.pagination.totalPages - 1; i++) {
-                    if (i === self.pagination.currentPage || (i === self.pagination.currentPage - 1) || (i === self.pagination.currentPage + 1)) {
-                        const pageItem = document.createElement('li');
-                        pageItem.className = 'page-item';
-                        pageItem.innerHTML = `<a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link ${i === self.pagination.currentPage ? 'page-active' : ''}">${i}</a>`;
-                        pageItem.querySelector('a').addEventListener('click', function(e) {
-                            e.preventDefault();
-                            if (i !== self.pagination.currentPage) {
-                                self.pagination.currentPage = i;
-                                renderProducts(catalogId, self.pagination.currentPage);
-                            }
-                        });
-                        paginationContainer.appendChild(pageItem);
-                    }
+                const startPage = Math.max(2, self.pagination.currentPage - 1);
+                const endPage = Math.min(self.pagination.totalPages - 1, self.pagination.currentPage + 1);
+
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageItem = document.createElement('li');
+                    pageItem.className = 'page-item';
+                    pageItem.innerHTML = `<a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link ${i === self.pagination.currentPage ? 'page-active' : ''}">${i}</a>`;
+                    pageItem.querySelector('a').addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (i !== self.pagination.currentPage) {
+                            self.pagination.currentPage = i;
+                            renderProducts(catalogId, self.pagination.currentPage);
+                        }
+                    });
+                    paginationContainer.appendChild(pageItem);
                 }
 
                 // Добавляем многоточие между текущей и последней страницей
                 if (self.pagination.currentPage < self.pagination.totalPages - 2 && self.pagination.totalPages > 4) {
                     const ellipsisItem = document.createElement('li');
-                    ellipsisItem.className = 'page-item'; // disabled для отображения
+                    ellipsisItem.className = 'page-item';
                     ellipsisItem.innerHTML = '<a href="javascript:void(0)" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">...</a>';
                     paginationContainer.appendChild(ellipsisItem);
                 }
 
-                // Добавляем последнюю страницу, если есть больше двух страниц
-                if (self.pagination.totalPages > 2) {
+                // Добавляем последнюю страницу
+                if (self.pagination.totalPages > 1) {
                     const lastPageItem = document.createElement('li');
                     lastPageItem.className = 'page-item';
                     lastPageItem.innerHTML = `<a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link ${self.pagination.currentPage === self.pagination.totalPages ? 'page-active' : ''}">${self.pagination.totalPages}</a>`;
