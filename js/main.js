@@ -3,6 +3,11 @@ import { formattedImages } from './data/imageObjectData.js';
 
 var main = {
     imageIndexes: imageIndexes,
+    pagination: {
+        productsPerPage: 3,
+        currentPage: 1,
+        totalPages: 0,
+    },
 
     init: function() {
         this.showLoading();
@@ -52,58 +57,156 @@ var main = {
 
     setupCatalog: function() {
         var self = this;
-        document.querySelectorAll('.js-load-products').forEach(button => {
-            button.addEventListener('click', function () {
-                const catalogId = parseInt(this.getAttribute('data-catalog-id'));
 
-                document.querySelector('.js-rows').innerHTML = '';
+        // Updated renderProducts to accept all products and apply currentCategory when filtering
+        const renderProducts = function(catalogId = null, page = 1) {
+            document.querySelector('.js-rows').innerHTML = '';
 
-                const filteredImages = formattedImages.filter(item => item.catalog_id === catalogId);
-                var carouselHTML = '<div class="row-background"></div>';
+            // Динамически фильтруем товары исходя из выбранного каталога или всех товаров
+            const filteredImages = catalogId
+                ? formattedImages.filter(function(item) {
+                    return item.catalog_id === catalogId;
+                })
+                : formattedImages;
 
-                const groupedImages = filteredImages.reduce((acc, item) => {
-                    if (!acc[item.id]) {
-                        acc[item.id] = [];
+            // Группируем изображения по id товара
+            const groupedImages = filteredImages.reduce(function(acc, item) {
+                const key = item.id;
+                if (!acc[key]) {
+                    acc[key] = [];
+                }
+                acc[key].push(item);
+                return acc;
+            }, {});
+
+            // Получаем массив группированных товаров
+            const groupedArray = Object.values(groupedImages);
+            self.pagination.totalPages = Math.ceil(groupedArray.length / self.pagination.productsPerPage);
+
+            // Индексы для текущей страницы
+            const start = (page - 1) * self.pagination.productsPerPage;
+            const end = start + self.pagination.productsPerPage;
+            const currentProducts = groupedArray.slice(start, end);
+
+            let carouselHTML = '<div class="row-background"></div>';
+
+            currentProducts.forEach(function(images) {
+                const carouselId = `carouselProduct${images[0].id}`;
+                carouselHTML += `
+            <div class="col-md-4 product">
+                <div id="${carouselId}" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        ${images.map(function(img, index) {
+                            return `
+                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                <img src="/image/items/little/${img.src}" class="d-block w-100 size-p hover-brightness" alt="Товар">
+                            </div>`;
+                        }).join('')}
+                    </div>
+                    <div class="carousel-indicators">
+                        ${images.map(function(img, index) {
+                            return `<button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Изображение ${index + 1}"></button>`;
+                        }).join('')}
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="star-rating mb-4">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <img class="hover-brightness" src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
+                    </div>
+                </div>
+            </div>`;
+            });
+
+            document.querySelector('.js-rows').insertAdjacentHTML('beforeend', carouselHTML);
+            self.setupImageModals();
+            self.setupPaginationButtons(catalogId);
+        };
+
+        self.setupPaginationButtons = function(catalogId) {
+            const paginationContainer = document.querySelector('.js-pagination');
+            paginationContainer.innerHTML = '';
+
+            // Создаем кнопки пагинации
+            if (self.pagination.totalPages > 1) {
+                // Указываем номер текущей страницы
+                const currentPageIndex = self.pagination.currentPage - 1;
+
+                // Добавляем первую страницу
+                const firstPageItem = document.createElement('li');
+                firstPageItem.className = 'page-item';
+                firstPageItem.innerHTML = `<a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link ${self.pagination.currentPage === 1 ? 'page-active' : ''}">1</a>`;
+                firstPageItem.querySelector('a').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (self.pagination.currentPage > 1) {
+                        self.pagination.currentPage = 1;
+                        renderProducts(catalogId, self.pagination.currentPage);
                     }
-                    acc[item.id].push(item);
-                    return acc;
-                }, {});
+                });
+                paginationContainer.appendChild(firstPageItem);
 
-                for (const group in groupedImages) {
-                    const images = groupedImages[group];
-                    const carouselId = `carouselProduct${group}`;
-
-                    carouselHTML += `
-                <div class="col-md-4 product">
-                    <div id="${carouselId}" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            ${images.map((img, index) => `
-                                <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                                    <img src="/image/items/little/${img.src}" class="d-block w-100 size-p hover-brightness" alt="Товар">
-                                </div>
-                            `).join('')}
-                        </div>
-                        <div class="carousel-indicators">
-                            ${images.map((img, index) => `
-                                <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Изображение ${index + 1}"></button>
-                            `).join('')}
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="star-rating mb-4">
-                            <span>⭐⭐⭐⭐⭐</span>
-                            <img class="hover-brightness" src="/image/heart_full.png" alt="Сердечко" style="width: 20px;">
-                        </div>
-                    </div>
-                </div>`;
-
-                    document.querySelector('.js-rows').insertAdjacentHTML('beforeend', carouselHTML);
+                // Добавляем многоточие между первой страницей и текущей
+                if (self.pagination.currentPage > 3 && self.pagination.totalPages > 4) {
+                    const ellipsisItem = document.createElement('li');
+                    ellipsisItem.className = 'page-item'; // disabled для отображения
+                    ellipsisItem.innerHTML = '<a href="javascript:void(0)" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">...</a>';
+                    paginationContainer.appendChild(ellipsisItem);
                 }
 
-                self.setupImageModals();
+                // Добавляем страницы с номерами
+                for (let i = 2; i <= self.pagination.totalPages - 1; i++) {
+                    if (i === self.pagination.currentPage || (i === self.pagination.currentPage - 1) || (i === self.pagination.currentPage + 1)) {
+                        const pageItem = document.createElement('li');
+                        pageItem.className = 'page-item';
+                        pageItem.innerHTML = `<a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link ${i === self.pagination.currentPage ? 'page-active' : ''}">${i}</a>`;
+                        pageItem.querySelector('a').addEventListener('click', function(e) {
+                            e.preventDefault();
+                            if (i !== self.pagination.currentPage) {
+                                self.pagination.currentPage = i;
+                                renderProducts(catalogId, self.pagination.currentPage);
+                            }
+                        });
+                        paginationContainer.appendChild(pageItem);
+                    }
+                }
+
+                // Добавляем многоточие между текущей и последней страницей
+                if (self.pagination.currentPage < self.pagination.totalPages - 2 && self.pagination.totalPages > 4) {
+                    const ellipsisItem = document.createElement('li');
+                    ellipsisItem.className = 'page-item'; // disabled для отображения
+                    ellipsisItem.innerHTML = '<a href="javascript:void(0)" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">...</a>';
+                    paginationContainer.appendChild(ellipsisItem);
+                }
+
+                // Добавляем последнюю страницу, если есть больше двух страниц
+                if (self.pagination.totalPages > 2) {
+                    const lastPageItem = document.createElement('li');
+                    lastPageItem.className = 'page-item';
+                    lastPageItem.innerHTML = `<a href="#" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link ${self.pagination.currentPage === self.pagination.totalPages ? 'page-active' : ''}">${self.pagination.totalPages}</a>`;
+                    lastPageItem.querySelector('a').addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (self.pagination.currentPage < self.pagination.totalPages) {
+                            self.pagination.currentPage = self.pagination.totalPages;
+                            renderProducts(catalogId, self.pagination.currentPage);
+                        }
+                    });
+                    paginationContainer.appendChild(lastPageItem);
+                }
+            }
+        };
+
+        document.querySelectorAll('.js-load-products').forEach(function(button) {
+            button.addEventListener('click', function () {
+                const catalogId = parseInt(this.getAttribute('data-catalog-id'));
+                self.pagination.currentPage = 1; // Сброс на первую страницу
+                renderProducts(catalogId, self.pagination.currentPage);
             });
         });
+
+        // Initial load to render all products
+        renderProducts();
     },
+
 
     addItems: function() {
         var container = document.querySelector('.js-items-add');
