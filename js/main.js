@@ -20,17 +20,17 @@ var main = {
     showLoading: function() {
         document.getElementById("loading").style.display = "flex";
 
-        window.addEventListener("load", () => {
+        window.addEventListener("load", function() {
             document.getElementById("loading").style.display = "none";
         });
     },
 
     setupImageModals: function() {
-        document.querySelectorAll('img').forEach(image => {
+        document.querySelectorAll('img').forEach(function(image) {
             const check = image.closest('.product');
             if (!check) return;
 
-            image.addEventListener('click', (event) => {
+            image.addEventListener('click', function(event) {
                 const cardParent = event.target.closest('.carousel');
 
                 if (!cardParent) return;
@@ -201,11 +201,21 @@ var main = {
 
         document.querySelectorAll('.js-load-products').forEach(function(button) {
             button.addEventListener('click', function () {
+                // Убираем класс catalog-select у всех <p> элементов перед добавлением
+                document.querySelectorAll('.text-center').forEach(function(p) {
+                    p.classList.remove('catalog-select');
+                });
+
+                // Добавляем класс catalog-select к текущему <p>
+                this.nextElementSibling.querySelector('.text-center').classList.add('catalog-select');
+
+                // Продолжаем с текущей логикой
                 const catalogId = parseInt(this.getAttribute('data-catalog-id'));
                 self.pagination.currentPage = 1; // Сброс на первую страницу
                 renderProducts(catalogId, self.pagination.currentPage);
             });
         });
+
 
         // Initial load to render all products
         renderProducts();
