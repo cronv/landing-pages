@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elyse предлагает уникальную коллекцию антикварных и современных художественных предметов. Отличные подарки с историей для ваших близких!">
+    <meta name="keywords" content="антиквариат, современное искусство, подарки, уникальные предметы, vintage, коллекция, купить антиквариат, элитный антиквариат">
     <link rel="icon" href="/image/icons/favicon.ico" type="image/x-icon">
     <!-- iOS -->
     <link rel="apple-touch-icon" sizes="120x120" href="/image/icons/apple-touch-icon-120.png">
@@ -34,16 +36,16 @@
 <div class="header-bg container-fluid">
     <div class="row">
         <div class="col-md-6 d-flex flex-column align-items-center column-1">
-            <img src="/image/logo.png" alt="Лого Elyse" class="logo hover-brightness">
-            <p class="mt-4 text-center text-elyse-l text-wrap-550 hover-brightness fs-5">
+            <img src="/image/logo.png" alt="Лого Elyse - Антиквариат и современное искусство" class="logo hover-brightness">
+            <h1 class="mt-4 text-center text-elyse-l text-wrap-550 hover-brightness fs-5">
                 Коллекция антикварных винтажных предметов и предметов современного искусства
-            </p>
+            </h1>
         </div>
         <div class="col-md-6 d-flex flex-column align-items-center column-right column-2 mt-12">
             <div class="d-flex justify-content-center mt-3">
                 <div class="h-none">
                     <a href="#">
-                        <img src="/image/button_shop.png" alt="О магазине" class="about-icon hover-brightness img-fluid" />
+                        <img src="/image/button_shop.png" alt="Узнать о магазине" class="about-icon hover-brightness img-fluid" />
                     </a>
                 </div>
             </div>
@@ -57,14 +59,14 @@
             </div>
 
             <div class="contacts mt-3 d-flex justify-content-center">
-                <a href="mailto:logakmlv@gmail.com" target="_blank">
-                    <img src="/image/contacts/email.png" alt="E-mail" class="contact-icon hover-brightness img-fluid">
+                <a href="mailto:logakmlv@gmail.com" target="_blank" aria-label="Отправить E-mail">
+                    <img src="/image/contacts/email.png" alt="Иконка E-mail для связи с Elyse" class="contact-icon hover-brightness img-fluid">
                 </a>
-                <a href="https://wa.me/79169797128" target="_blank">
-                    <img src="/image/contacts/wa.png" alt="WhatsApp" class="contact-icon hover-brightness img-fluid">
+                <a href="https://wa.me/79169797128" target="_blank" aria-label="Написать в WhatsApp">
+                    <img src="/image/contacts/wa.png" alt="Иконка WhatsApp для связи с Elyse" class="contact-icon hover-brightness img-fluid">
                 </a>
-                <a href="https://t.me/IlyaKomolov" target="_blank">
-                    <img src="/image/contacts/tg_2.png" alt="Telegram" class="contact-icon hover-brightness img-fluid">
+                <a href="https://t.me/IlyaKomolov" target="_blank" aria-label="Написать в Telegram">
+                    <img src="/image/contacts/tg_2.png" alt="Иконка Telegram для связи с Elyse" class="contact-icon hover-brightness img-fluid">
                 </a>
             </div>
         </div>
@@ -80,36 +82,42 @@
 
 
 <!-- Меню -->
-<nav class="menu navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="menu navbar navbar-expand-lg navbar-dark bg-dark" itemscope itemtype="https://schema.org/SiteNavigationElement" itemprop="mainEntityOfPage">
     <div class="container-fluid">
         <ul class="navbar-nav w-100">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Каталог</a>
+            <li class="nav-item" itemscope itemtype="https://schema.org/Thing">
+                <a class="nav-link" href="#" itemprop="url">
+                    <span itemprop="name">Каталог</span>
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Доставка и оплата</a>
+            <li class="nav-item" itemscope itemtype="https://schema.org/Thing">
+                <a class="nav-link" href="#" itemprop="url">
+                    <span itemprop="name">Доставка и оплата</span>
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Индивидуальный подбор подарка</a>
+            <li class="nav-item" itemscope itemtype="https://schema.org/Thing">
+                <a class="nav-link" href="#" itemprop="url">
+                    <span itemprop="name">Индивидуальный подбор подарка</span>
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                    Обратная связь
+            <li class="nav-item" itemscope itemtype="https://schema.org/Thing">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal" itemprop="url">
+                    <span itemprop="name">Обратная связь</span>
                 </a>
             </li>
 
             <!-- LK, CART
-            <li class="nav-item">
+            <li class="nav-item" itemscope itemtype="https://schema.org/Thing">
                 <a class="nav-link" href="#"><img src="/image/lk.png" alt="Войти" style="width: 30px;"></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" itemscope itemtype="https://schema.org/Thing">
                 <a class="nav-link" href="#"><img src="/image/cart.png" alt="Корзина" style="width: 25px;"></a>
             </li>
             -->
         </ul>
         <div class="d-flex ms-auto">
             <label>
-                <input type="text" id="searchInput" placeholder="Поиск" class="form-control custom-input" maxlength="32" style="width: 200px;">
+                <input type="text" id="searchInput" placeholder="Поиск" class="form-control custom-input" maxlength="32" style="width: 200px;" aria-label="Поиск">
             </label>
         </div>
     </div>
@@ -125,35 +133,40 @@
 
     <!-- Карусель -->
     <div id="carouselExample22" class="carousel slide" data-bs-ride="carousel">
+        <h2 class="visually-hidden">Наши продукты</h2> <!-- Заголовок для SEO -->
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row">
                     <div class="col-3">
-                        <img src="/image/catalog/LS5A4548.jpg" class="hover-brightness d-block w-100 js-load-products" alt="Картинка 1"
+                        <img src="/image/catalog/LS5A4548.jpg" class="hover-brightness d-block w-100 js-load-products"
+                             alt="Единичные экземпляры - уникальное изделие"
                              data-catalog-id="1">
                         <div class="container">
                             <p>Единичные<br> экземпляры</p>
                         </div>
                     </div>
                     <div class="col-3">
-                        <img src="/image/catalog/LS5A4553.jpg" class="hover-brightness d-block w-100 js-load-products" alt="Картинка 2"
+                        <img src="/image/catalog/LS5A4553.jpg" class="hover-brightness d-block w-100 js-load-products"
+                             alt="Подарки с историей - уникальные товары"
                              data-catalog-id="2">
                         <div class="container">
                             <p>Подарки<br> с историей</p>
                         </div>
                     </div>
                     <div class="col-3">
-                        <img src="/image/catalog/LS5A4789.jpg" class="hover-brightness d-block w-100 js-load-products" alt="Картинка 3"
+                        <img src="/image/catalog/LS5A4789.jpg" class="hover-brightness d-block w-100 js-load-products"
+                             alt="Иконы - религиозные изделия"
                              data-catalog-id="3">
                         <div class="container">
                             <p>Иконы</p>
                         </div>
                     </div>
                     <div class="col-3">
-                        <img src="/image/catalog/LS5A4638.jpg" class="hover-brightness d-block w-100 js-load-products" alt="Картинка 4"
+                        <img src="/image/catalog/LS5A4638.jpg" class="hover-brightness d-block w-100 js-load-products"
+                             alt="Посуда и вазы - элегантный декор"
                              data-catalog-id="4">
                         <div class="container">
-                            <p>Посуда, <br>вазы</p>
+                            <p>Посуда,<br> вазы</p>
                         </div>
                     </div>
                 </div>
@@ -211,29 +224,30 @@
 </div>
 
 <!-- Подвал -->
-<div>
-    <img src="/image/footer.png" alt="Изображение подвала" class="footer-image">
+<div itemscope itemtype="http://schema.org/Organization">
+    <img src="/image/footer.png" alt="Изображение подвала с контактной информацией" class="footer-image">
 </div>
 <div class="footer-main">
     <h2>КОНТАКТЫ</h2>
     <div class="contact-info">
-        Тел.: <a href="https://wa.me/79169797128" target="_blank" class="inherit-color hover-brightness text-decoration-none">
+        Тел.: <a href="https://wa.me/79169797128" target="_blank" class="inherit-color hover-brightness text-decoration-none" itemprop="telephone">
             <strong>+7 (916) 979-71-28</strong>
         </a>
     </div>
-    <div class="contact-info">Доставим Вам подарок в любую точку мира!</div>
+    <div class="contact-info" itemprop="description">Доставим Вам подарок в любую точку мира!</div>
 
     <div class="contacts mt-3 d-flex justify-content-center">
-        <a href="mailto:logakmlv@gmail.com" target="_blank">
-            <img src="/image/contacts/email.png" alt="E-mail" class="contact-icon hover-brightness img-fluid">
+        <a href="mailto:logakmlv@gmail.com" target="_blank" itemprop="email">
+            <img src="/image/contacts/email.png" alt="Электронная почта для связи" class="contact-icon hover-brightness img-fluid">
         </a>
         <a href="https://wa.me/79169797128" target="_blank">
-            <img src="/image/contacts/wa.png" alt="WhatsApp" class="contact-icon hover-brightness img-fluid">
+            <img src="/image/contacts/wa.png" alt="Связаться через WhatsApp" class="contact-icon hover-brightness img-fluid">
         </a>
         <a href="https://t.me/IlyaKomolov" target="_blank">
-            <img src="/image/contacts/tg_2.png" alt="Telegram" class="contact-icon hover-brightness img-fluid">
+            <img src="/image/contacts/tg_2.png" alt="Связаться через Telegram" class="contact-icon hover-brightness img-fluid">
         </a>
     </div>
+    <meta itemprop="name" content="Elyse">
 </div>
 
 

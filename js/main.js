@@ -145,7 +145,7 @@ var main = {
                 paginationContainer.appendChild(firstPageItem);
 
                 // Добавляем многоточие между первой страницей и текущей
-                if (self.pagination.currentPage > 3 && self.pagination.totalPages > 4) {
+                if (self.pagination.currentPage > 3 && self.pagination.totalPages >= 4) {
                     const ellipsisItem = document.createElement('li');
                     ellipsisItem.className = 'page-item';
                     ellipsisItem.innerHTML = '<a href="javascript:void(0)" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">...</a>';
@@ -171,7 +171,7 @@ var main = {
                 }
 
                 // Добавляем многоточие между текущей и последней страницей
-                if (self.pagination.currentPage < self.pagination.totalPages - 2 && self.pagination.totalPages > 4) {
+                if (self.pagination.currentPage < self.pagination.totalPages - 2 && self.pagination.totalPages >= 4) {
                     const ellipsisItem = document.createElement('li');
                     ellipsisItem.className = 'page-item';
                     ellipsisItem.innerHTML = '<a href="javascript:void(0)" class="page-link btn-none rounded-circle d-flex justify-content-center align-items-center icon-small mt-link">...</a>';
