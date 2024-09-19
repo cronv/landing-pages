@@ -48,11 +48,15 @@ var main = {
     },
 
     setupSearch: function() {
-        document.getElementById('searchInput').addEventListener('click', function() {
-            this.value = '';
-            var myModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
-            myModal.show();
-        });
+        var searchInput = document.getElementById('searchInput');
+
+        if (searchInput) {
+            searchInput.addEventListener('click', function() {
+                this.value = '';
+                var myModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+                myModal.show();
+            });
+        }
     },
 
     setupCatalog: function() {

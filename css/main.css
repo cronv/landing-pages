@@ -13,6 +13,10 @@ body {
     background-color: var(--bs-base);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body.modal-open {
     overflow: auto !important;
     padding-right: 0 !important;
